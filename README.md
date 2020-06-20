@@ -7,5 +7,6 @@ generated and updated.
 
 ## Setup
 Download the correct Chrome driver correlating with the version of Chrome you
-are running. Rename in to chromedriver and place it in the directory with the
-script
+are running from
+[this site](https://sites.google.com/a/chromium.org/chromedriver/downloads). Rename in to chromedriver and place it in the directory with the
+script.
