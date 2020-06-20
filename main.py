@@ -6,14 +6,13 @@ package like BeautifulSoup because the relevant information is dynamically
 generated and updated.
 """
 
-import urllib.request
 import csv
-import os.path
+import os
+from urllib.parse import urlparse
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from urllib.parse import urlparse
 
 urls = ["https://www.wto.org/english/tratop_e/covid19_e/trade_related_goods_measure_e.htm",
         "https://www.wto.org/english/tratop_e/covid19_e/trade_related_ip_measure_e.htm",
@@ -31,7 +30,10 @@ def gen_file_name(url):
 
 def get_data_and_write_csv(url):
     """Retrieve the data from the given url and write it to a CSV"""
-    with webdriver.Firefox() as driver:
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    driver_loc = os.path.join(os.getcwd, "chromedriver")
+    with webdriver.Chrome(executable_path=driver_loc, options=chrome_options) as driver:
         # Fetch the resource
         driver.get(url)
 
