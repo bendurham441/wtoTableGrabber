@@ -8,5 +8,7 @@ generated and updated.
 ## Setup
 Download the correct Chrome driver correlating with the version of Chrome you
 are running from
-[this site](https://sites.google.com/a/chromium.org/chromedriver/downloads). Rename in to chromedriver and place it in the directory with the
-script.
+[this site](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+Rename the driver file to chromedriver and place it in the directory with the
+script. Then install selenium via `pip3 install selenium`. Run the script
+as such: `python3 main.py`.
